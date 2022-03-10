@@ -14,7 +14,7 @@ XTDDXPConfigurator >> configureExperiment [
 		| concreteLogger userId |
 		userId := self requestUserName ifNil: [ ^ self ].
 		concreteLogger := self newLogger.
-		concreteLogger setExperiment: nil.
+		concreteLogger setExperiment: XTDDXPExperiment new.
 		concreteLogger projectName: 'xtdd'.
 		concreteLogger participantUUID: userId.
 		self spyClass logger: concreteLogger.

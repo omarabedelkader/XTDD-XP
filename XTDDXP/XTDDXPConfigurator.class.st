@@ -18,7 +18,8 @@ XTDDXPConfigurator >> configureExperiment [
 		concreteLogger projectName: 'xtdd'.
 		concreteLogger participantUUID: userId.
 		self spyClass logger: concreteLogger.
-		self instrumenterClass instrumentSystem ]
+		self instrumenterClass instrumentSystem.
+		concreteLogger authorizeDataSending  ]
 ]
 
 { #category : #accessing }

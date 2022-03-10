@@ -37,7 +37,7 @@ XTDDXPConfigurator >> requestUserName [
 	| input |
 	input := UIManager default
 		         request: 'Type selector:'
-		         initialAnswer: 'flag:'.
+		         initialAnswer: ''.
 	(#( nil '' ) includes: input) ifTrue: [ ^ self ].
 
 	^ input

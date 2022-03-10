@@ -9,7 +9,7 @@ BaselineOfXTDDXP >> baseline: spec [
 
 	<baseline>
 	spec baseline: 'DebuggingSpy' with:[
-		spec repository: 'github://StevenCostiou/DebuggingSpy'].
+		spec repository: 'github://StevenCostiou/DebuggingSpy:P10'].
 	
 	spec baseline: 'DSSpyEventRecorder' with: [ 
 		spec repository:

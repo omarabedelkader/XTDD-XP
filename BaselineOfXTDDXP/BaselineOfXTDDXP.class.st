@@ -11,7 +11,7 @@ BaselineOfXTDDXP >> baseline: spec [
 	spec baseline: 'DebuggingSpy' with:[
 		spec repository: 'github://StevenCostiou/DebuggingSpy'].
 	
-	spec baseline: 'PharoXPEventRecorder' with: [ 
+	spec baseline: 'DSSpyEventRecorder' with: [ 
 		spec repository:
 			'github://Pharo-XP-Tools/DebuggingSpy-EventRecorder:main' ].
 

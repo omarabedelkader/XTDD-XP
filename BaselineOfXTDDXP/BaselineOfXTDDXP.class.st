@@ -8,6 +8,9 @@ Class {
 BaselineOfXTDDXP >> baseline: spec [
 
 	<baseline>
+	spec baseline: 'DebuggingSpy' with:[
+		spec repository: 'github://StevenCostiou/DebuggingSpy'].
+	
 	spec baseline: 'PharoXPEventRecorder' with: [ 
 		spec repository:
 			'github://Pharo-XP-Tools/DebuggingSpy-EventRecorder:main' ].

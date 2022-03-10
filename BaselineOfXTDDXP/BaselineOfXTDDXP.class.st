@@ -26,6 +26,6 @@ BaselineOfXTDDXP >> postload: loader package: packageSpec [
 	UIManager default
 		informUser: 'Instrumenting image. Please wait...'
 		during: [ 
-			(self class environment at: #XTDDXPConfigurator)
+			(self class environment at: #XTDDXPConfigurator) new
 				configureExperiment ]
 ]

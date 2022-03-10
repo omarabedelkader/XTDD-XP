@@ -9,16 +9,16 @@ Class {
 
 { #category : #configuration }
 XTDDXPConfigurator >> configureExperiment [
-	
-	|concreteLogger userId|
-	userId := self requestUserName ifNil:[^self].
-	concreteLogger := self newLogger.
-	concreteLogger setExperiment: nil.
-	concreteLogger projectName: 'xtdd'.
-	concreteLogger participantUUID: userId.
-	self spyClass logger: concreteLogger.
-	self instrumenterClass instrumentSystem
 
+	EpMonitor disableDuring: [ 
+		| concreteLogger userId |
+		userId := self requestUserName ifNil: [ ^ self ].
+		concreteLogger := self newLogger.
+		concreteLogger setExperiment: nil.
+		concreteLogger projectName: 'xtdd'.
+		concreteLogger participantUUID: userId.
+		self spyClass logger: concreteLogger.
+		self instrumenterClass instrumentSystem ]
 ]
 
 { #category : #accessing }

@@ -11,15 +11,18 @@ Class {
 XTDDXPConfigurator >> configureExperiment [
 
 	EpMonitor disableDuring: [ 
-		| concreteLogger userId |
+		| userId currentAuthorName concreteLogger |
 		userId := self requestUserName ifNil: [ ^ self ].
+		currentAuthorName := Author uniqueInstance fullNamePerSe.
+		Author uniqueInstance fullName: 'XXTDDSetup'.
 		concreteLogger := self newLogger.
 		concreteLogger setExperiment: XTDDXPExperiment new.
 		concreteLogger projectName: 'xtdd'.
 		concreteLogger participantUUID: userId.
 		self spyClass logger: concreteLogger.
 		self instrumenterClass instrumentSystem.
-		concreteLogger authorizeDataSending  ]
+		Author uniqueInstance fullName: currentAuthorName.
+		concreteLogger authorizeDataSending ]
 ]
 
 { #category : #accessing }

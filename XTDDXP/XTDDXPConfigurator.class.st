@@ -40,7 +40,7 @@ XTDDXPConfigurator >> requestUserName [
 
 	| input |
 	input := UIManager default
-		         request: 'Type selector:'
+		         request: 'Please provide your XTDD unique id:'
 		         initialAnswer: ''.
 	(#( nil '' ) includes: input) ifTrue: [ ^ self ].
 

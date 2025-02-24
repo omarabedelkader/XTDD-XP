@@ -1,1 +1,1 @@
-Package { #name : #BaselineOfXTDDXP }
+Package { #name : 'BaselineOfXTDDXP' }

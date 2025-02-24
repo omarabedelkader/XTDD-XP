@@ -1,26 +1,27 @@
 Class {
-	#name : #BaselineOfXTDDXP,
-	#superclass : #BaselineOf,
-	#category : #BaselineOfXTDDXP
+	#name : 'BaselineOfXTDDXP',
+	#superclass : 'BaselineOf',
+	#category : 'BaselineOfXTDDXP',
+	#package : 'BaselineOfXTDDXP'
 }
 
-{ #category : #baselines }
+{ #category : 'baselines' }
 BaselineOfXTDDXP >> baseline: spec [
 
 	<baseline>
 	spec baseline: 'DebuggingSpy' with:[
-		spec repository: 'github://StevenCostiou/DebuggingSpy:P10'].
+		spec repository: 'github://StevenCostiou/DebuggingSpy:P12'].
 	
 	spec baseline: 'DSSpyEventRecorder' with: [ 
 		spec repository:
-			'github://Pharo-XP-Tools/DebuggingSpy-EventRecorder:main' ].
+			'github://Pharo-XP-Tools/DebuggingSpy-EventRecorder:P12' ].
 
 	spec for: #common do: [ 
 		spec postLoadDoIt: #postload:package:.
 		spec package: 'XTDDXP' ]
 ]
 
-{ #category : #actions }
+{ #category : 'actions' }
 BaselineOfXTDDXP >> postload: loader package: packageSpec [
 
 	UIManager default

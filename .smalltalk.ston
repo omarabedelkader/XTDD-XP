@@ -1,7 +1,7 @@
 SmalltalkCISpec {
   #loading : [
     SCIMetacelloLoadSpec {
-      #baseline : 'XTDD-XP',
+      #baseline : 'XTDDXP',
       #directory : 'src',
       #platforms : [ #pharo ]
     }

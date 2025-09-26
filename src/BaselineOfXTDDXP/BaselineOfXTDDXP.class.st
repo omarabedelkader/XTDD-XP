@@ -16,9 +16,13 @@ BaselineOfXTDDXP >> baseline: spec [
 		spec repository:
 			'github://Pharo-XP-Tools/DebuggingSpy-EventRecorder:P12' ].
 
-	spec for: #common do: [ 
-		spec postLoadDoIt: #postload:package:.
-		spec package: 'XTDDXP' ]
+        spec for: #common do: [
+                spec postLoadDoIt: #postload:package:.
+                spec package: 'XTDDXP'.
+                spec package: 'XTDDXP-Tests' with: [ spec requires: #('XTDDXP') ].
+                spec group: 'default' with: #('XTDDXP').
+                spec group: 'tests' with: #('XTDDXP-Tests').
+                spec group: 'all' with: #('default' 'tests')]
 ]
 
 { #category : 'actions' }

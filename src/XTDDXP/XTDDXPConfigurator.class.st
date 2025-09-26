@@ -35,7 +35,10 @@ XTDDXPConfigurator >> instrumenterClass [
 
 { #category : 'configuration' }
 XTDDXPConfigurator >> newLogger [
-	^(self class environment at: #DSEventRecorderLogger) new
+
+	(self class environment includesKey: #DSEventRecorderLogger)
+		ifTrue: [ ^ (self class environment at: #DSEventRecorderLogger) new ].
+	^ XTDDXPNullLogger new
 ]
 
 { #category : 'configuration' }

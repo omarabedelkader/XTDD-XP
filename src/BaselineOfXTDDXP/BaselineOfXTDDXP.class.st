@@ -9,20 +9,18 @@ Class {
 BaselineOfXTDDXP >> baseline: spec [
 
 	<baseline>
-	spec baseline: 'DebuggingSpy' with:[
-		spec repository: 'github://StevenCostiou/DebuggingSpy:P12'].
-	
-	spec baseline: 'DSSpyEventRecorder' with: [ 
+	spec
+		baseline: 'DebuggingSpy'
+		with: [ spec repository: 'github://StevenCostiou/DebuggingSpy:P12' ].
+
+	spec baseline: 'DSSpyEventRecorder' with: [
 		spec repository:
 			'github://Pharo-XP-Tools/DebuggingSpy-EventRecorder:P12' ].
 
-        spec for: #common do: [
-                spec postLoadDoIt: #postload:package:.
-                spec package: 'XTDDXP'.
-                spec package: 'XTDDXP-Tests' with: [ spec requires: #('XTDDXP') ].
-                spec group: 'default' with: #('XTDDXP').
-                spec group: 'tests' with: #('XTDDXP-Tests').
-                spec group: 'all' with: #('default' 'tests')]
+	spec for: #common do: [
+		spec postLoadDoIt: #postload:package:.
+		spec package: 'XTDDXP'.
+		spec package: 'XTDDXP-Tests' with: [ spec requires: #( 'XTDDXP' ) ]. ]
 ]
 
 { #category : 'actions' }

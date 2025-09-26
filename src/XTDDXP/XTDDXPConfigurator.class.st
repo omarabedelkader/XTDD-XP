@@ -2,12 +2,13 @@
 I configure user ids and loggers for the XTDDXP first exploration.
 "
 Class {
-	#name : #XTDDXPConfigurator,
-	#superclass : #Object,
-	#category : #XTDDXP
+	#name : 'XTDDXPConfigurator',
+	#superclass : 'Object',
+	#category : 'XTDDXP',
+	#package : 'XTDDXP'
 }
 
-{ #category : #configuration }
+{ #category : 'configuration' }
 XTDDXPConfigurator >> configureExperiment [
 
 	EpMonitor disableDuring: [ 
@@ -27,34 +28,37 @@ XTDDXPConfigurator >> configureExperiment [
 		 ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 XTDDXPConfigurator >> instrumenterClass [
 	^(self class environment at: #DSSpyInstrumenter)
 ]
 
-{ #category : #configuration }
+{ #category : 'configuration' }
 XTDDXPConfigurator >> newLogger [
 	^(self class environment at: #DSEventRecorderLogger) new
 ]
 
-{ #category : #configuration }
+{ #category : 'configuration' }
 XTDDXPConfigurator >> removeERRecorderFromSettings [
-	EREventRecorderSettings class compile:'urlSettingsOn: aBuilder 
 
-	(aBuilder setting: #stringUrl)
-		parent: #Tools;
-		target: self;
-		description: ''The default URL for the Event Recorder server.'';
-		label: ''Event Recorder URL address''
+        | eventRecorderSettingsClass |
+        (self class environment includesKey: #EREventRecorderSettings)
+                ifFalse: [ ^ self ].
+        eventRecorderSettingsClass := self class environment at: #EREventRecorderSettings.
+        eventRecorderSettingsClass class compile:'urlSettingsOn: aBuilder
+        (aBuilder setting: #stringUrl)
+                parent: #Tools;
+                target: self;
+                description: ''The default URL for the Event Recorder server.'';
+                label: ''Event Recorder URL address''
 '
-	
 ]
 
-{ #category : #requests }
+{ #category : 'requests' }
 XTDDXPConfigurator >> requestUserName [
 
 	| input |
-	input := UIManager default
+	input := self uiManager
 		         request: 'Please provide your XTDD unique id:'
 		         initialAnswer: ''.
 	(#( nil '' ) includes: input) ifTrue: [ ^ self ].
@@ -62,7 +66,12 @@ XTDDXPConfigurator >> requestUserName [
 	^ input
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 XTDDXPConfigurator >> spyClass [
 	^(self class environment at: #DSSpy)
+]
+
+{ #category : 'accessing' }
+XTDDXPConfigurator >> uiManager [
+	^ UIManager default
 ]

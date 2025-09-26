@@ -30,7 +30,10 @@ XTDDXPConfigurator >> configureExperiment [
 
 { #category : 'accessing' }
 XTDDXPConfigurator >> instrumenterClass [
-	^(self class environment at: #DSSpyInstrumenter)
+
+	(self class environment includesKey: #DSSpyInstrumenter)
+        ifTrue: [ ^ (self class environment at: #DSSpyInstrumenter) ].
+    ^ XTDDXPNullInstrumenter
 ]
 
 { #category : 'configuration' }
@@ -71,7 +74,10 @@ XTDDXPConfigurator >> requestUserName [
 
 { #category : 'accessing' }
 XTDDXPConfigurator >> spyClass [
-	^(self class environment at: #DSSpy)
+
+	(self class environment includesKey: #DSSpy)
+        ifTrue: [ ^ (self class environment at: #DSSpy) ].
+    ^ XTDDXPNullSpy
 ]
 
 { #category : 'accessing' }

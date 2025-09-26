@@ -7,8 +7,9 @@ Class {
 		'participantUUID',
 		'authorized'
 	],
-	#category : 'XTDDXP-Tests',
-	#package : 'XTDDXP-Tests'
+	#category : 'XTDDXP-Tests-Mock',
+	#package : 'XTDDXP-Tests',
+	#tag : 'Mock'
 }
 
 { #category : 'logging' }

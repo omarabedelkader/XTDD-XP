@@ -4,8 +4,9 @@ Class {
 	#classInstVars : [
 		'Instrumented'
 	],
-	#category : 'XTDDXP-Tests',
-	#package : 'XTDDXP-Tests'
+	#category : 'XTDDXP-Tests-Mock',
+	#package : 'XTDDXP-Tests',
+	#tag : 'Mock'
 }
 
 { #category : 'initialization' }

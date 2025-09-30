@@ -4,8 +4,9 @@ Class {
 	#instVars : [
 		'nextAnswer'
 	],
-	#category : 'XTDDXP-Tests',
-	#package : 'XTDDXP-Tests'
+	#category : 'XTDDXP-Tests-Tests',
+	#package : 'XTDDXP-Tests',
+	#tag : 'Tests'
 }
 
 { #category : 'tests' }

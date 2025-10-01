@@ -12,7 +12,12 @@ BaselineOfXTDDXP >> baseline: spec [
 	spec
 		baseline: 'DebuggingSpy'
 		with: [ spec repository: 'github://StevenCostiou/DebuggingSpy:P12' ].
-
+		
+	spec baseline: 'DSSpyEventRecorder' with: [
+		spec repository:
+			'github://Pharo-XP-Tools/DebuggingSpy-EventRecorder:P12' ].
+		
+		
 	spec for: #common do: [
 		spec postLoadDoIt: #postload:package:.
 		spec package: 'XTDDXP'.
